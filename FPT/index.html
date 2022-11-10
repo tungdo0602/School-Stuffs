@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Index of FPT...</title>
+    </head>
+    <body>
+        <h1>School Password :O</h1>
+        <p>Student: <code id="student"></code></p>
+        <p>Teacher: <code id="teacher"></code></p>
+        <p>Office: <code id="office"></code></p>
+        <script>
+            (function(){
+                window.onload = function(){
+                    const student = "123@123a";
+                    const teacher = "Fsccg@teacher";
+                    const office = "Fsccg@staff";
+                    [document.querySelector("#student").innerText, document.querySelector("#teacher").innerText, document.querySelector("#office").innerText] = [student, teacher, office];
+                }
+            })();
+        </script>
+    </body>
+</html>
