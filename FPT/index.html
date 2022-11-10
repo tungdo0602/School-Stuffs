@@ -8,13 +8,34 @@
         <p>Student: <code id="student"></code></p>
         <p>Teacher: <code id="teacher"></code></p>
         <p>Office: <code id="office"></code></p>
+        <h3>Get Special Password: <button id="pass">Enter Password</button></h3>
         <script>
             (function(){
                 window.onload = function(){
-                    const student = "123@123a";
-                    const teacher = "Fsccg@teacher";
-                    const office = "Fsccg@staff";
-                    [document.querySelector("#student").innerText, document.querySelector("#teacher").innerText, document.querySelector("#office").innerText] = [student, teacher, office];
+                    function decrypt(v, t){
+                        for(let i=0;i<t;i++){
+                            v = atob(v);
+                        }
+                        return v;
+                    }
+                    function encrypt(v, t){
+                        for(let i=0;i<t;i++){
+                            v = btoa(v);
+                        }
+                        return v;
+                    }
+                    const student = "VmtaYVUxTnRWbk5TYTFaVFYwZDRUMVJYZEZaUFVUMDk=";
+                    const teacher = "Vmxjd01WUXlSbk5oTTJ4aFVsVmFjbFZxUm1GaU1XUlZVMjA1YVZJd05YVlZSbEYzVUZFOVBRPT0=";
+                    const office = "Vmxjd01WUXlSbk5oTTJ4aFVsVmFjVlJVUmt0aU1XUjBUVlp3VVZWVU1Eaz0=";
+                    document.querySelector("#student").innerText = decrypt(student, 5);
+                    document.querySelector("#pass").onclick = function(){
+                        c = window.prompt("Password");
+                        if(encrypt(c, 5)==="VmpKd1MxSXdOVmhUYmxKcFVucFdhRlJYZEZaUFVUMDk="){
+                            [document.querySelector("#teacher").innerText, document.querySelector("#office").innerText] = [decrypt(teacher, 5), decrypt(office, 5)];
+                        }else{
+                            alert("Wrong LOL!!!!")
+                        }
+                    }
                 }
             })();
         </script>
