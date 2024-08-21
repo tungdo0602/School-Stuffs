@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DTD</title>
+</head>
+<body>
+    <button id="b">Canva project</button>
+    <p id="result"></p>
+    <script>
+        window.onload=()=>{
+            const enc=(d)=>{
+                return [...btoa([...d].reverse().join(""))].reverse().join("")
+            }
+            const dec=(d)=>{
+                return [...atob([...d].reverse().join(""))].reverse().join("")
+            }
+            let cont="==Aa0RHczpzLvc3d35yYh5mdh5yYv12LkV2cpdmbvQUQH5UNrBFM2d3cvcnVip2YrZ2bHl1XyVDNCFHcwp2Uyc3LlRWa09Td012Xj9mb0Vmb01DRBdkT1sGUwY3dzZSd012XjFWbwFWan5WPkV2cpdmbzhWYyVmJ1RXbf1WZklWdt1Dbp52ayYSd012Xz9WdyNWZ9MHahJXZiVHd09mb"
+            let pw="==gMxQzN0gzM2QzN"
+            document.querySelector("#b").onclick=()=>{
+                if(enc(prompt("pass (limit32)"))===pw){
+                    document.querySelector("#result").innerText=dec(cont)
+                }else{
+                    alert("Wrong.")
+                }
+            }
+        }
+    </script>
+</body>
+</html>
