@@ -7,7 +7,7 @@
 </head>
 <body>
     <button id="b">Canva project</button>
-    <p id="result"></p>
+    <a id="result"></a>
     <script>
         window.onload=()=>{
             const enc=(d)=>{
@@ -21,6 +21,7 @@
             document.querySelector("#b").onclick=()=>{
                 if(enc(prompt("pass (limit32)"))===pw){
                     document.querySelector("#result").href=dec(cont)
+                    document.querySelector("#result").innerText="link"
                 }else{
                     alert("Wrong.")
                 }
