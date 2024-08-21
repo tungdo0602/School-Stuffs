@@ -1,2 +1,2 @@
 # School-Stuffs
-Collection of school stuffs
+School stuffs
